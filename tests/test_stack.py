@@ -19,7 +19,16 @@ def test_push():
     stack.push("data1")
     # assert stack.top ==
     assert stack.size == 1
-    stack.push("data1")
+    stack.push("data2")
     assert stack.size == 2
+    stack.push("data3")
+    assert stack.size == 3
+
+
 def test_pop():
-    pass
+    stack.pop()
+    assert stack.size == 2
+    stack.pop()
+    assert stack.size == 1
+    stack.pop()
+    assert stack.size == 0
