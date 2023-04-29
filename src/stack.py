@@ -18,7 +18,7 @@ class Stack:
         """Конструктор класса Stack"""
 
         self.top = None
-        # self.size = 0
+        self.size = 0  # глубина стека
 
     def push(self, data):
         """
@@ -27,22 +27,24 @@ class Stack:
         :param data: данные, которые будут добавлены на вершину стека
         """
 
-        new_node = Node(data, self.top)
-        if self.top:
-            new_node.next_node = self.top
-        self.top = new_node
-        # self.size += 1
+        new_node = Node(data, None)  # создаем экземпляр класса Node, нижний элемент стека
+        if self.top:  # проверка есть предыдущий (нижний) элемент стека? если есть
+            new_node.next_node = self.top  # тогда записывает в атрибут верхнего(нового) элемента стека историю нижних элеметов
+        self.top = new_node # иначе созданный экземпяр класса Node становитья верхним.
+        self.size += 1
 
     def pop(self):
         """
         Метод для удаления элемента с вершины стека и его возвращения
 
-        :return: данные удаленного элемента
+        :return: данные удаленного элемента - по типу метода list.pop
+
         """
-        temp = self.top.data
-        self.top = self.top.next_node
-        # self.size -= 1
-        return temp
+
+        temp = self.top.data # сохраняем временно верхний элемент стека
+        self.top = self.top.next_node  # назначаем предыдущий элемент верхним
+        self.size -= 1
+        return temp # возвращаем верхний элемент и забываем про него
 
     def peek(self):
         """Для доступа к верхней записи данных в стеке без изменения самого стека"""

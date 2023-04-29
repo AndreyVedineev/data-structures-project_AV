@@ -16,10 +16,8 @@ def test_stack_init():
 
 
 def test_push():
-    def push(self, data):
-    new_node = Node(data=, None)
+    pass
 
 
 def test_pop():
-    def pop(self):
-        assert self.top.next_node == ""
+    assert stack.pop() == stack.top.data
