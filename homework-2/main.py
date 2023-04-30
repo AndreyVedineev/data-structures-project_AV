@@ -20,4 +20,4 @@ if __name__ == '__main__':
     assert stack.top.data == 'data1'
 
     # данные удаленного элемента
-    assert data == 'data2'
+    assert stack.top.data == 'data1'

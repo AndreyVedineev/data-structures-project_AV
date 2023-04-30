@@ -32,3 +32,18 @@ def test_pop():
     assert stack.size == 1
     stack.pop()
     assert stack.size == 0
+
+
+def test_pop1():
+    stack.push('data1')
+    data = stack.pop()
+    assert stack.top is None
+    assert data == 'data1'
+
+
+def test_pop2():
+    stack.push('data1')
+    stack.push('data2')
+    data = stack.pop()
+    assert stack.top.data == 'data1'
+    assert stack.top.data == 'data1'
