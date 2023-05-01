@@ -12,6 +12,8 @@ class TestNodeInit(unittest.TestCase):
         self.assertEquals(n1.data, 5)
         self.assertEquals(n1.next_node, None)
 
+
+class TestSteak(unittest.TestCase):
     def test_stack_init(self):
         stack = Stack()
         self.assertEquals(stack.top, None)
