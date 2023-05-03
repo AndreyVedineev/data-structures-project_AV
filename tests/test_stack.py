@@ -49,6 +49,13 @@ class TestSteak(unittest.TestCase):
             stack.pop()
             self.assertEqual(stack.size, 0)
 
+    def test__str__(self):
+        stack = Stack()
+        stack.push("data1")
+        self.assertEqual(stack.__str__(), "data1")
+        stack.push("data2")
+        self.assertEqual(stack.__str__(), "data2")
+
 
 if __name__ == '__main__':
     unittest.main()
