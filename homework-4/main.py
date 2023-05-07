@@ -13,3 +13,5 @@ if __name__ == '__main__':
     assert queue.dequeue() == 'data2'
     assert queue.dequeue() == 'data3'
     assert queue.dequeue() is None
+
+
