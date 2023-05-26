@@ -37,6 +37,28 @@ class LinkedList:
                 n = n.next_node
             n.next_node = new_node
 
+    def to_list(self):
+        """Возвращает список с данными, содержащимися в односвязном списке"""
+        lst = []
+        current_node = self.head
+        while current_node is not None:
+            lst.append(current_node.data)
+            current_node = current_node.next_node
+        return lst
+
+    def get_data_by_id(self, parm):
+        """возвращает первый найденный в словарь с ключом 'id', значение которого равно переданному в метод
+        значению."""
+
+        current_node = self.head
+        while current_node is not None:
+            try:
+                if parm == current_node.data['id']:
+                    return current_node.data
+            except TypeError:
+                print('Данные не являются словарем или в словаре нет id.')
+            current_node = current_node.next_node
+
     def __str__(self) -> str:
         """Вывод данных односвязного списка в строковом представлении"""
         node = self.head
@@ -45,8 +67,8 @@ class LinkedList:
 
         ll_string = ''
         while node:
-            ll_string += f' {str(node.data)} ->'
+            ll_string += f'{str(node.data)} -> '
             node = node.next_node
 
-        ll_string += ' None'
+        ll_string += 'None'
         return ll_string

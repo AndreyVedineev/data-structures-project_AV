@@ -29,13 +29,23 @@ class TestLinkedList(unittest.TestCase):
         ll.insert_beginning({'id': 0})
         self.assertEqual(ll.head.data, {'id': 0})
 
-    def test_insert_at_end(self):
+    def test_to_list(self):
         ll = LinkedList()
 
-        # Добавляем данные
-        ll.insert_beginning({'id': 1})
-        ll.insert_at_end({'id': 2})
-        self.assertEqual(ll.head.data, {'id': 1})
-        self.assertEqual(ll.head, {'id': 2})
-        ll.insert_at_end({'id': 3})
+        ll.insert_beginning({'id': 1, 'username': 'lazzy343434'})
+        ll.insert_at_end({'id': 2, 'username': 'rim.for'})
+        ll.insert_at_end({'id': 3, 'username': 'rubin1'})
 
+        lst = ll.to_list()
+        self.assertEqual(lst[0], {'id': 1, 'username': 'lazzy343434'})
+        self.assertEqual(lst[1], {'id': 2, 'username': 'rim.for'})
+        self.assertEqual(lst[2], {'id': 3, 'username': 'rubin1'})
+
+    def test_get_data_by_id(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': 'lazzy343434'})
+        ll.insert_at_end({'id': 2, 'username': 'rim.for'})
+        ll.insert_at_end({'id': 3, 'username': 'rubin1'})
+
+        user_data = ll.get_data_by_id(2)
+        self.assertEqual(user_data, {'id': 2, 'username': 'rim.for'})
