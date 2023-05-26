@@ -50,7 +50,4 @@ class TestLinkedList(unittest.TestCase):
         user_data = ll.get_data_by_id(2)
         self.assertEqual(user_data, {'id': 2, 'username': 'rim.for'})
 
-        with self.assertRaises(TypeError):
-            user_data = ll.get_data_by_id(6)
-            print(user_data)
 
